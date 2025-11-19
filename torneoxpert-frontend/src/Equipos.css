@@ -1,0 +1,225 @@
+/* form.css */
+.form-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.form-title {
+  text-align: center;
+  color: #2c3e50;
+  margin-bottom: 30px;
+  font-size: 2.5rem;
+  font-weight: 300;
+  border-bottom: 2px solid #3498db;
+  padding-bottom: 10px;
+}
+
+/* Grid container para las cartas */
+.equipos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 25px;
+  padding: 20px 0;
+}
+
+/* Estilo base de la carta */
+.equipo-card {
+  background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 1px solid #e9ecef;
+  position: relative;
+  overflow: hidden;
+}
+
+.equipo-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #3498db, #2ecc71);
+}
+
+.equipo-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Encabezado de la carta */
+.equipo-card h3 {
+  color: #2c3e50;
+  margin: 0 0 10px 0;
+  font-size: 1.4rem;
+  font-weight: 600;
+  padding-right: 30px;
+}
+
+/* Información básica siempre visible */
+.equipo-info-basica {
+  margin-bottom: 15px;
+}
+
+.equipo-info-basica p {
+  margin: 5px 0;
+  color: #555;
+  font-size: 0.95rem;
+}
+
+.equipo-info-basica strong {
+  color: #2c3e50;
+}
+
+/* Contenido desplegable */
+.equipo-contenido {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease, opacity 0.3s ease;
+  opacity: 0;
+}
+
+.equipo-card.abierto .equipo-contenido {
+  max-height: 1000px;
+  opacity: 1;
+  margin-top: 15px;
+}
+
+/* Secciones dentro del contenido desplegable */
+.equipo-seccion {
+  margin-bottom: 20px;
+  padding: 15px;
+  background: #f8f9fa;
+  border-radius: 8px;
+  border-left: 4px solid #3498db;
+}
+
+.equipo-seccion h4 {
+  color: #2c3e50;
+  margin: 0 0 10px 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+/* Lista de titulares */
+.titulares-lista {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.titulares-lista li {
+  background: white;
+  margin: 8px 0;
+  padding: 12px;
+  border-radius: 6px;
+  border-left: 3px solid #2ecc71;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease;
+}
+
+.titulares-lista li:hover {
+  transform: translateX(5px);
+}
+
+/* Información del suplente */
+.suplente-info {
+  background: white;
+  padding: 15px;
+  border-radius: 8px;
+  border-left: 3px solid #e74c3c;
+  margin-top: 10px;
+}
+
+/* Fecha de inscripción */
+.equipo-fecha {
+  text-align: center;
+  font-size: 0.85rem;
+  color: #7f8c8d;
+  padding: 10px;
+  background: #ecf0f1;
+  border-radius: 6px;
+  margin-top: 15px;
+  font-style: italic;
+}
+
+/* Indicador de despliegue */
+.equipo-indicador {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 20px;
+  height: 20px;
+  transition: transform 0.3s ease;
+}
+
+.equipo-indicador::before,
+.equipo-indicador::after {
+  content: '';
+  position: absolute;
+  background: #3498db;
+  transition: all 0.3s ease;
+}
+
+.equipo-indicador::before {
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 2px;
+  transform: translateY(-50%);
+}
+
+.equipo-indicador::after {
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  transform: translateX(-50%);
+}
+
+.equipo-card.abierto .equipo-indicador::after {
+  opacity: 0;
+}
+
+.equipo-card.abierto .equipo-indicador {
+  transform: rotate(45deg);
+}
+
+/* Estados vacíos y mensajes */
+.form-container > p {
+  text-align: center;
+  color: #7f8c8d;
+  font-size: 1.1rem;
+  margin: 40px 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .equipos-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .form-container {
+    padding: 15px;
+  }
+  
+  .form-title {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .equipo-card {
+    padding: 15px;
+  }
+  
+  .equipo-card h3 {
+    font-size: 1.2rem;
+  }
+}

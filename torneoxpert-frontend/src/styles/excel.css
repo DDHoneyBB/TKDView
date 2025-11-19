@@ -1,0 +1,148 @@
+.panel-central {
+  max-width: 900px;
+  margin: 2rem auto;
+  position: relative;
+  border-radius: 16px;
+  padding: 2.5rem;
+  background-color: #fff;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.titulo-seccion {
+  font-size: 1.8rem;
+  font-weight: 700;
+  border-bottom: 2px solid #e2e8f0;
+  padding-bottom: 0.5rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+p {
+  color: #5d5656;
+}
+
+.texto-descriptivo {
+  text-align: center;
+  color: #5d5656;
+  margin-bottom: 2rem;
+  font-style: italic;
+  font-size: 1rem;
+}
+
+.filtros-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.campo-filtro {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.campo-filtro label {
+  font-weight: 600;
+  color: #333;
+  font-size: 1rem;
+}
+
+.campo-filtro input,
+.campo-filtro select {
+  border: 1px solid #828285;
+  border-radius: 6px;
+  padding: 0.6rem 0.8rem;
+  font-size: 1rem;
+  transition: all 0.2s ease;
+}
+
+.campo-filtro input:focus,
+.campo-filtro select:focus {
+  border-color: #4299e1;
+  box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.25);
+  outline: none;
+}
+
+.checkbox-group {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: 0.5rem;
+}
+
+.checkbox-group label {
+  font-weight: 500;
+  color: #444;
+}
+
+.checkbox-group input {
+  margin-right: 0.4rem;
+  transform: scale(1.2);
+}
+
+.botones-container {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 3rem;
+  flex-wrap: wrap;
+}
+
+.btn-exhibicion {
+  background: #4299e1;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 0.9rem 2rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  min-width: 200px;
+}
+
+.btn-exhibicion:hover {
+  background: #3182ce;
+  transform: translateY(-2px);
+}
+
+.btn-exhibicion:disabled {
+  background: #a0aec0;
+  cursor: not-allowed;
+}
+
+.btn-deshacer {
+  background: #4a5568;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 0.9rem 2rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  min-width: 200px;
+}
+
+.btn-deshacer:hover {
+  background: #2d3748;
+  transform: translateY(-2px);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .panel-central {
+    padding: 1.5rem;
+  }
+
+  .botones-container {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .btn-exhibicion,
+  .btn-deshacer {
+    width: 100%;
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "name": "torneo-taekwondo-backend",
+  "version": "1.0.0",
+  "description": "Backend para gestión de torneos de Taekwondo",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js"
+  },
+  "keywords": [
+    "taekwondo",
+    "backend",
+    "express",
+    "sqlite3"
+  ],
+  "author": "Mercedes Dolores Corradi",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^1.12.2",
+    "body-parser": "^1.20.3",
+    "cors": "^2.8.5",
+    "exceljs": "^4.4.0",
+    "express": "^4.21.2",
+    "multer": "^2.0.1",
+    "path": "^0.12.7",
+    "socket.io": "^4.8.1",
+    "sqlite3": "^5.1.7"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

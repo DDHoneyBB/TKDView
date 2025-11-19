@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Control de Ingreso - QR</title>
+  <script src="https://unpkg.com/html5-qrcode"></script>
+</head>
+<body>
+  <h2>Control de Ingreso</h2>
+  <div id="reader" style="width:300px"></div>
+  <div id="resultado" style="margin-top:20px;"></div>
+  <script>
+    function mostrarMensaje(msg, color="black") {
+      document.getElementById("resultado").innerHTML = `<span style="color:${color};font-size:1.2em">${msg}</span>`;
+    }
+
+    function onScanSuccess(decodedText) {
+      try {
+        const data = JSON.parse(decodedText);
+        if (!data.dni) {
+          mostrarMensaje("El QR no contiene DNI", "red");
+          return;
+        }
+        // Consultar si ya ingresó
+        fetch(`/ingreso/${data.dni}`)
+          .then(res => res.json())
+          .then(res => {
+            if (res.ingreso) {
+              mostrarMensaje(`DNI ${data.dni} (${data.nombre})<br><b>YA INGRESÓ</b>`, "orange");
+            } else {
+              // Marcar ingreso
+              fetch("/ingreso", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ dni: data.dni })
+              })
+              .then(r => r.json())
+              .then(r => {
+                if (r.ok) {
+                  mostrarMensaje(`DNI ${data.dni} (${data.nombre})<br><b>Ingreso registrado</b>`, "green");
+                } else {
+                  mostrarMensaje("Error al registrar ingreso", "red");
+                }
+              });
+            }
+          })
+          .catch(() => mostrarMensaje("No se pudo consultar el ingreso", "red"));
+      } catch {
+        mostrarMensaje("QR inválido", "red");
+      }
+    }
+
+    new Html5Qrcode("reader").start(
+      { facingMode: "environment" },
+      { fps: 10, qrbox: 250 },
+      onScanSuccess
+    );
+  </script>
+</body>
+</html>

@@ -1,0 +1,204 @@
+
+.credencial-wrapper {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.credencial {
+  width: 350px;
+  min-height: 450px;
+  margin: 0 auto;
+  border: 3px solid #033bacc7;
+  border-radius: 20px;
+  box-shadow: 0 6px 15px rgba(200, 0, 0, 0.4); 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px 15px;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, #df2929 0%, #424ed3 100%);
+}
+
+.credencial::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: repeating-linear-gradient(
+    135deg,                         
+    rgba(255, 0, 0, 0.15) 0px,  
+    rgba(255, 0, 0, 0.05) 40px, 
+    rgba(0, 102, 255, 0.15) 80px,  
+    rgba(0, 102, 255, 0.05) 120px  
+  );
+  background-size: 200% 200%;
+  opacity: 0.6;                     
+  pointer-events: none;
+}
+
+.credencial::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at top left, rgba(255, 0, 0, 0.12), transparent 60%),
+              radial-gradient(circle at bottom right, rgba(0, 102, 255, 0.12), transparent 60%);
+  mix-blend-mode: overlay;
+  pointer-events: none;
+}
+
+.credencial-logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.credencial-logo img {
+  width: 90px; 
+  height: auto;
+  display: block; 
+  object-fit: contain;
+  border-radius: 10%;
+}
+
+.credencial-foto {
+  width: 210px;
+  height: 210px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 3px solid #0044cc;
+  background: #f0f0f0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.credencial-foto img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;  
+  object-position: center;
+  border-radius: 50%;
+  background-color: #df2929;
+}
+
+.credencial-info {
+  text-align: center;
+}
+
+.credencial-info h2 {
+  color: #ded9d9;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.credencial-info p {
+  margin: 5px;
+  font-size: 15px;
+  color: #ded9d9;
+  letter-spacing: 1px;
+}
+
+.credencial-qr {
+  border-radius: 5%;
+  margin-top: 15px;
+}
+
+.credencial-body {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  align-items: start;
+  width: 100%;
+  margin-top: 10px;
+  gap: 15px;
+}
+
+.no-foto {
+  color: #777;
+  font-size: 14px;
+}
+
+.credencial-buttons {
+  margin-top: 65px;
+}
+
+.btn {
+  padding: 8px 14px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.btn-blue {
+  background: #0044cc;
+  color: white;
+  width: 150px;
+}
+
+.btn-green {
+  background: #00a63a;
+  color: white;
+  width:150px;
+}
+
+.btn-red {
+  background: #a60600;
+  color: white;
+  width:150px;
+}
+
+@media (max-width: 768px) {
+  .credencial {
+    width: 280px;
+    min-height: 400px;
+    padding: 15px;
+  }
+
+  .credencial-foto {
+    width: 160px;
+    height: 160px;
+  }
+
+  .credencial-info h2 {
+    font-size: 22px;
+  }
+
+  .credencial-info p {
+    font-size: 13px;
+  }
+
+  .btn {
+    width: 130px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .credencial {
+    width: 95%;
+    padding: 12px;
+  }
+
+  .credencial-foto {
+    width: 130px;
+    height: 130px;
+  }
+
+  .credencial-info h2 {
+    font-size: 20px;
+  }
+
+  .credencial-info p {
+    font-size: 12px;
+  }
+
+  .credencial-buttons {
+    margin-top: 40px;
+  }
+
+  .btn {
+    width: 100%;
+    font-size: 13px;
+  }
+}

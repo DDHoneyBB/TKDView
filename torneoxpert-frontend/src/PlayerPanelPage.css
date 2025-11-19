@@ -1,0 +1,243 @@
+/* PlayerPanelPage.css */
+.dropdown-container {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  left: 20px;
+}
+
+.dropdown-toggle {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 25px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+.dropdown-toggle:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+.dropdown-arrow {
+  transition: transform 0.3s ease;
+  font-size: 12px;
+}
+
+.dropdown-arrow.open {
+  transform: rotate(180deg);
+}
+
+.dropdown-content {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%) scale(0.95);
+  background: white;
+  border-radius: 15px;
+  padding: 0;
+  margin-top: 10px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  z-index: 1000;
+  min-width: 300px;
+  max-width: 90vw;
+  overflow: hidden;
+}
+
+.dropdown-content.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) scale(1);
+}
+
+.dropdown-header {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.dropdown-header h3 {
+  margin: 0;
+  font-size: 18px;
+}
+
+.close-dropdown {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+  padding: 0;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: background 0.3s ease;
+}
+
+.close-dropdown:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.links-grid {
+  padding: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 15px;
+}
+
+.link-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #f8f9fa;
+  border-radius: 10px;
+  padding: 10px;
+  transition: all 0.3s ease;
+}
+
+.link-item:hover {
+  background: #e9ecef;
+  transform: translateX(5px);
+}
+
+.link-button {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #007bff;
+  color: white;
+  padding: 12px 15px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.link-button:hover {
+  background: #0056b3;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 123, 255, 0.3);
+}
+
+.judge-icon {
+  font-size: 16px;
+}
+
+.copy-button {
+  background: #28a745;
+  color: white;
+  border: none;
+  padding: 10px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.copy-button:hover {
+  background: #218838;
+  transform: scale(1.1);
+}
+
+.dropdown-footer {
+  padding: 10px 20px;
+  background: #f8f9fa;
+  text-align: center;
+  border-top: 1px solid #dee2e6;
+  color: #6c757d;
+}
+
+/* Animación de entrada para los items */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.link-item {
+  animation: slideIn 0.3s ease forwards;
+}
+
+.link-item:nth-child(1) { animation-delay: 0.05s; }
+.link-item:nth-child(2) { animation-delay: 0.1s; }
+.link-item:nth-child(3) { animation-delay: 0.15s; }
+.link-item:nth-child(4) { animation-delay: 0.2s; }
+
+/* Responsive */
+@media (max-width: 768px) {
+  .dropdown-content {
+    min-width: 280px;
+    max-width: 95vw;
+  }
+  
+  .links-grid {
+    grid-template-columns: 1fr;
+    padding: 15px;
+  }
+  
+  .dropdown-toggle {
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+}
+
+.puntajes-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.puntajes-content {
+  background: white;
+  padding: 1rem 2rem;
+  border-radius: 12px;
+  width: 80%;
+  max-height: 80%;
+  overflow-y: auto;
+  box-shadow: 0 0 15px rgba(0,0,0,0.4);
+}
+
+.puntajes-content table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.puntajes-content th, .puntajes-content td {
+  padding: 8px;
+  border-bottom: 1px solid #ccc;
+  text-align: center;
+}
+
+.puntajes-content th {
+  background: #009688;
+  color: white;
+}

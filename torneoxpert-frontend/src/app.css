@@ -1,0 +1,398 @@
+body {
+  height: 100%;
+  width: 100%;
+}
+.app {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: nowrap;
+}
+.hong{
+  color: #b71c1c;
+}
+.chong{
+  color: #0052cc;
+}
+.player-panel {
+  margin-left: 2.5rem;
+  height: 90%;
+  width: 80%;
+  padding: 0.5rem;
+  border: 2px solid #3b3b3b;
+  border-radius: 10px;
+  background-color: #effafc;
+  font-family: Arial, sans-serif;
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.title {
+  margin: 0;
+  padding: 0.5rem;
+  font-size: 0.9rem;
+  color: white;
+  border-radius: 6px 6px 0 0;
+}
+
+.title.blue {
+  background-color: #0052cc;
+}
+
+.title.red {
+  background-color: #cc0000;
+}
+
+.score-list {
+  margin-top: 0.5rem;
+}
+.info button{
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+.score-item {
+  display: flex;
+  gap: 50px;
+  margin-bottom: 0.5rem;
+  background-color: #feffff;
+  padding: 4px;
+  border-radius: 5px;
+  box-shadow: 4px 4px #4fc7ff;
+}
+
+.score-item:hover{
+  transform: translateY(3px);
+}
+
+.score-item select {
+  font-size: 1.5rem;
+  padding: 2px;
+  border-radius: 7px;
+  box-shadow: 4px 3px #4fc7ff;
+}
+
+.btn-delete {
+  background-color: green;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 0.7rem;
+  cursor: pointer;
+  width:100px;
+}
+
+.info {
+  margin-top: 0.5rem;
+  display: flex;
+  gap: 7px;
+}
+.info button{
+  font-size: 1rem;
+  border-radius: 5px;
+}
+.info button:hover{
+  transform: translateY(-2px);
+  box-shadow: 3px 8px #4fc7ff;
+}
+.salto-sect button:hover{
+  transition: 1s;
+  transform: scale(1.5);
+  box-shadow: 4px 3px #4fc7ff;
+}
+
+.player {
+  background-color: #ff3434;
+  border: none;
+  padding: 0.3rem;
+  border-radius: 5px;
+  margin: 0.2rem auto;
+  width: 30%;
+  font-size: 100%;
+  cursor: pointer;
+}
+
+.salto-sect {
+  display: flex;
+  padding: 0.4rem 0.2rem;
+  margin-top: 0.5rem;
+  font-size: 2rem;
+}
+
+.total-text {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-top: 0.4rem;
+}
+
+.btn-accept {
+  margin-top: 5rem;
+  padding: 0.4rem 0.6rem;
+  background-color: #1976d2;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+  width: 100%;
+}
+.Contenedor-pnts-y-vid{
+  display: flex;
+  justify-self: center;
+  gap: 70px;
+}
+.Repeticion{
+  background-color: green;
+  color: white;
+  border: none;
+  border-radius: 7px;
+  box-shadow: 3px 3px #4fc7ff;
+  cursor: pointer;
+}
+/* Extra botones debajo */
+.btn-accept.dark {
+  background-color: #222;
+  width: 180px;
+}
+
+.btn-accept.danger {
+  background-color: #b71c1c;
+  width: 180px;
+}
+
+/* Texto grande final */
+.player-panel > .salto-sect:last-of-type {
+  font-size: 2rem;
+  font-weight: bold;
+  background-color: #e8f5e9;
+  padding: 1rem 0;
+  margin-top: 0.5rem;
+  border-top: 2px solid #ccc;
+}
+
+/* PlayerPanel.css - Estilos para el popup */
+
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  animation: fadeIn 0.3s ease;
+}
+
+.popup-content {
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  width: 90%;
+  max-width: 800px;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  animation: slideIn 0.3s ease;
+  overflow: hidden;
+}
+
+.popup-header {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.popup-header h3 {
+  margin: 0;
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+
+.popup-close {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 28px;
+  cursor: pointer;
+  padding: 0;
+  width: 35px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: background 0.3s ease;
+}
+
+.popup-close:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.popup-body {
+  padding: 20px;
+  flex: 1;
+  overflow-y: auto;
+  max-height: 60vh;
+}
+
+.popup-footer {
+  padding: 15px 20px;
+  background: #f8f9fa;
+  border-top: 1px solid #e0e0e0;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.popup-close-btn {
+  background: #6c757d;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background 0.3s ease;
+}
+
+.popup-close-btn:hover {
+  background: #5a6268;
+}
+
+.boton-mostrar-listado {
+  transition: all 0.3s ease;
+}
+
+.boton-mostrar-listado:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(255, 107, 53, 0.3);
+}
+.btn-clear {
+  background-color: #6c757d;
+  color: white;
+  border: none;
+  padding: 0.6rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 1rem;
+  width: 180px;
+  transition: all 0.3s ease;
+  box-shadow: 3px 3px #c1c1c1;
+}
+
+.btn-clear:hover {
+  background-color: #5a6268;
+  transform: translateY(-2px);
+  box-shadow: 4px 4px #a8a8a8;
+}
+
+
+/* Animaciones */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9) translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+/* Scrollbar personalizado para el popup */
+.popup-body::-webkit-scrollbar {
+  width: 8px;
+}
+
+.popup-body::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 4px;
+}
+
+.popup-body::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 4px;
+}
+
+.popup-body::-webkit-scrollbar-thumb:hover {
+  background: #a8a8a8;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .popup-content {
+    width: 95%;
+    max-width: 95%;
+    margin: 10px;
+  }
+  
+  .popup-header {
+    padding: 15px;
+  }
+  
+  .popup-header h3 {
+    font-size: 1.2rem;
+  }
+  
+  .popup-body {
+    padding: 15px;
+    max-height: 70vh;
+  }
+  
+  .popup-footer {
+    padding: 10px 15px;
+  }
+}
+
+/* Efecto de backdrop blur para navegadores modernos */
+@supports (backdrop-filter: blur(10px)) {
+  .popup-overlay {
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(5px);
+  }
+}
+/* === Overlay TIEMPO MÉDICO === */
+.overlay-tiempo-medico {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: all;
+}
+
+.overlay-tiempo-medico::after {
+  content: "⏱️ TIEMPO MÉDICO";
+  background: rgba(0, 0, 255, 0.85);
+  color: white;
+  font-size: 3rem;
+  font-weight: bold;
+  padding: 1.5rem 3rem;
+  border-radius: 16px;
+  text-align: center;
+  box-shadow: 0 0 25px rgba(0,0,0,0.4);
+  animation: parpadeo 1s infinite alternate;
+}
+
+@keyframes parpadeo {
+  0% { opacity: 1; }
+  100% { opacity: 0.4; }
+}

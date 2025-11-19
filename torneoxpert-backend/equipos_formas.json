@@ -1,0 +1,71 @@
+[
+  {
+    "id": 1762483555040,
+    "escuela": "Yosae",
+    "instructor": "Claudia Spinoza",
+    "nombreEquipo": "prueba",
+    "titulares": [
+      {
+        "id": 5,
+        "nombre": "Lauryn",
+        "dni": "12345678",
+        "genero": "femenino",
+        "edad": 22,
+        "graduacion": "Azul",
+        "categoria": "Adultos",
+        "modalidad": "forma"
+      },
+      {
+        "id": 7,
+        "nombre": "Lorena",
+        "dni": "00100010",
+        "genero": "femenino",
+        "edad": 22,
+        "graduacion": "Rojo",
+        "categoria": "Adultos",
+        "modalidad": "forma"
+      },
+      {
+        "id": 9,
+        "nombre": "Lucia ",
+        "dni": "09200307",
+        "genero": "femenino",
+        "edad": 23,
+        "graduacion": "Rojo",
+        "categoria": "Adultos",
+        "modalidad": "forma"
+      },
+      {
+        "id": 11,
+        "nombre": "Lucila",
+        "dni": "00043000",
+        "genero": "femenino",
+        "edad": 22,
+        "graduacion": "Rojo",
+        "categoria": "Adultos",
+        "modalidad": "forma"
+      },
+      {
+        "id": 13,
+        "nombre": "Mercedes ",
+        "dni": "00000007",
+        "genero": "femenino",
+        "edad": 40,
+        "graduacion": "Verde punta azul",
+        "categoria": "Veteranos",
+        "modalidad": "combate"
+      }
+    ],
+    "suplente": {
+      "id": 12,
+      "nombre": "demo",
+      "dni": "31454736",
+      "genero": "femenino",
+      "edad": 20,
+      "graduacion": "Rojo",
+      "categoria": "Adultos",
+      "modalidad": "combate"
+    },
+    "fecha": "2025-11-07T02:45:55.040Z"
+  }
+]

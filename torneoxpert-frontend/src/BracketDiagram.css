@@ -1,0 +1,76 @@
+/* BracketDiagram.css */
+.bracket-container {
+  width: 100%;
+  overflow-x: auto;
+  padding: 20px;
+  background: #f8f9fa;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.bracket-header {
+  text-align: center;
+  margin-bottom: 20px;
+  padding: 10px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+}
+
+.bracket-header h3 {
+  margin: 0;
+  color: #333;
+  font-size: 1.2em;
+}
+
+.bracket-empty {
+  text-align: center;
+  padding: 60px 20px;
+  color: #666;
+  font-style: italic;
+}
+
+.bracket-box {
+  fill: white;
+  stroke: #ddd;
+  stroke-width: 2;
+  transition: all 0.2s ease;
+}
+
+.bracket-box.blue {
+  fill: #e3f2fd;
+  stroke: #1e90ff;
+}
+
+.bracket-box.red {
+  fill: #ffebee;
+  stroke: #e53935;
+}
+
+.bracket-box.winner {
+  fill: #e8f5e8;
+  stroke: #4caf50;
+  stroke-width: 3;
+}
+
+.bracket-box.final {
+  fill: #fff3e0;
+  stroke: #ff9800;
+  stroke-width: 3;
+}
+
+.bracket-box:hover {
+  filter: brightness(0.95);
+  transform: scale(1.02);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .bracket-container {
+    padding: 10px;
+  }
+  
+  .bracket-header h3 {
+    font-size: 1em;
+  }
+}

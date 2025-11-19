@@ -1,0 +1,749 @@
+/* TatamiSala.css - Versión Profesional */
+.tatami-sala {
+  padding: 2rem;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  min-height: 100vh;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.sala-header {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 1.5rem 2rem;
+  border-radius: 16px;
+  margin-bottom: 2rem;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.sala-header h1 {
+  margin: 0 0 0.5rem 0;
+  color: #2d3748;
+  font-size: 2rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  -webkit-text-fill-color: transparent;
+}
+
+.sala-info {
+  display: flex;
+  gap: 2rem;
+  font-size: 0.95rem;
+  color: #4a5568;
+  font-weight: 500;
+}
+
+/* Grid de controles - Diseño profesional 
+.controles-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, auto);
+  gap: 2rem;
+  margin-bottom: 2rem;
+  justify-items: center;
+  align-items: start;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}*/
+
+/* Switch mejorado */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 52px;
+  height: 28px;
+  margin: 0 8px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, #cbd5e0, #a0aec0);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  border-radius: 28px;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 20px;
+  width: 20px;
+  left: 4px;
+  bottom: 4px;
+  background: white;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  border-radius: 50%;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+
+
+input:checked + .slider {
+  background: linear-gradient(135deg, #4299e1, #3182ce);
+}
+
+input:checked + .slider:before {
+  transform: translateX(24px);
+  box-shadow: 0 2px 8px rgba(66, 153, 225, 0.4);
+}
+
+/* Contenedor principal - Diseño profesional */
+.control-individual-container {
+  font-family: 'Segoe UI', sans-serif;
+  background: black;
+  padding: 1.5rem;
+  border-radius: 20px;
+  margin: 0;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+  width: 100%;
+  display: flex;
+  box-sizing: border-box;
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+.panel-central {
+  background: linear-gradient(145deg, #2d3748, #4a5568); /* igual que mobile-simulator2 */
+  border-radius: 16px;
+  padding: 1rem;
+  display: table-column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: background 0.3s ease;
+}
+
+/* Botones del panel central coherentes con el resto */
+.panel-central .btn.control {
+  background: linear-gradient(135deg, #4a5568, #2d3748);
+  color: #e2e8f0;
+  border-radius: 10px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.3);
+  width: 90px;
+  height: 40px;
+  font-weight: 600;
+}
+
+.panel-central .btn.control:hover {
+  background: linear-gradient(135deg, #5a6478, #374151);
+  transform: scale(1.05);
+}
+
+.control-individual-container:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+}
+
+/* ====== ESPEJO DE COLUMNA ROJA ====== */
+
+/* Header con título y switch */
+.control-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  padding: 0 0.5rem;
+}
+
+.control-title {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #2d3748;
+  margin: 0;
+  white-space: nowrap;
+  letter-spacing: -0.5px;
+}
+
+.switch-container {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-shrink: 0;
+}
+
+.switch-label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #4a5568;
+  white-space: nowrap;
+}
+
+/* Simulador móvil - Diseño profesional */
+.mobile-simulator {
+  position: relative;
+  height: auto;
+  width: 800px;
+  border-radius: 20px;
+  background: linear-gradient(145deg, #1a202c, #2d3748);
+  box-shadow: 
+    inset 0 2px 10px rgba(0, 0, 0, 0.5),
+    0 8px 32px rgba(0, 0, 0, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  flex-grow: 1;
+  box-sizing: border-box;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.mobile-simulator2 {
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  padding: 1rem;
+  background: linear-gradient(160deg, #2d3748, #4a5568);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  position: relative;
+}
+
+/* Grid de botones - Diseño profesional */
+.grid-botones {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 1rem;
+  gap: 1rem;
+  box-sizing: border-box;
+  padding: 0 0.5rem;
+}
+
+.columna {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  flex: 1;
+  align-items: center;
+  justify-content: flex-start;
+  min-height: 0;
+}
+
+.grupo-superior {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.grupo-inferior {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+/* Botones base - Diseño profesional */
+.btn {
+  width: 100%;
+  max-width: 85px;
+  height: 50px;
+  font-size: 1rem;
+  padding: 0.75rem;
+  font-weight: 700;
+  border-radius: 14px;
+  border: none;
+  cursor: pointer;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  flex-shrink: 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+  transition: left 0.5s;
+}
+
+.btn:hover::before {
+  left: 100%;
+}
+
+/* Botones hexagonales - Diseño profesional */
+.btn.extra {
+  clip-path: polygon(
+    50% 0%,
+    90% 25%,
+    90% 75%,
+    50% 100%,
+    10% 75%,
+    10% 25%
+  );
+  width: 70px;
+  height: 60px;
+  max-width: 70px;
+  margin: 0 auto;
+  font-size: 1.1rem;
+}
+
+.btn.extra:hover,
+.btn.reducido:hover {
+  transform: scale(1.08) translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.azul {
+  background: linear-gradient(135deg, #2196F3, #1976D2);
+  color: white;
+  border: 2px solid #1976D2;
+}
+
+.rojo {
+  background: linear-gradient(135deg, #f44336, #d32f2f);
+  color: white;
+  border: 2px solid #d32f2f;
+}
+
+.control {
+  background: linear-gradient(135deg, #4CAF50, #388E3C);
+  color: rgb(53, 53, 53);
+  margin: 5px 0;
+}
+
+/* Botones en modo reducido */
+.solo-switch {
+  min-height: 80px;
+  font-size: 14px;
+  top: 70px;
+}
+
+.solo-switch2 {
+  min-height: 80px;
+  font-size: 14px;
+  top: 90px;
+}
+
+/* Panel central */
+.panel-central {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  flex: 0 0 100px;
+}
+
+/* Switch */
+.switch-container {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: .4s;
+  border-radius: 34px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: rgb(5, 5, 5);
+  transition: .4s;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: #2196F3;
+}
+
+input:checked + .slider:before {
+  transform: translateX(26px);
+}
+
+/* Estados y texto */
+.estado {
+  text-align: center;
+  margin-top: 10px;
+  font-style: italic;
+  color: #666;
+}
+
+.extra {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+/* Clases para botones medianos - CORREGIDAS */
+.medioa {
+  min-height: 60px;
+  font-size: 20px;
+}
+
+.mediob {
+  min-height: 70px;
+  font-size: 22px;
+  margin-right: 150px;
+}
+
+.medioa2 {
+  min-height: 60px;
+  font-size: 20px;
+  margin-left:0px;
+}
+
+.mediob2 {
+  min-height: 70px;
+  font-size: 22px;
+}
+
+/* --- UTILIDADES PARA MOVER BOTONES (añadir aquí) --- */
+/* contenedor que permite posicionamiento absoluto */
+.pos-relative {
+  position: relative;
+}
+
+/* posicionamiento absoluto para botones dentro de un contenedor .pos-relative */
+.btn.pos-abs {
+  position: absolute;
+  z-index: 10;
+  transition: all 0.2s ease;
+  pointer-events: auto;
+}
+
+/* posiciones genéricas (centrado en lados) */
+.pos-top    { top: 8px; left: 50%; transform: translateX(-50%); }
+.pos-bottom { bottom: 8px; left: 50%; transform: translateX(-50%); }
+.pos-left   { left: 8px; top: 50%; transform: translateY(-50%); }
+.pos-right  { right: 8px; top: 50%; transform: translateY(-50%); }
+.pos-center { top: 50%; left: 50%; transform: translate(-50%, -50%); }
+
+/* Clases específicas para formar los clusters como en el dibujo */
+/* izquierda: coordenadas desde el borde izquierdo del contenedor */
+.cluster-left { position: relative; }
+.cluster-left .btn.p1 { top: 190px; left: 30px; }   /* arriba izquierda */
+.cluster-left .btn.p2 { top: 250px; left: 80px; }   /* abajo izquierda */
+.cluster-left .btn.p3 { top: 190px; left: 130px; } /* medio derecha */
+.cluster-left .btn.p4 { top: 100px; left: 100px; }  /* arriba derecha */
+.cluster-left .btn.p5 { top: 44px; left: 40px; }    /* superior intermedio */
+
+/* derecha: coordenadas desde el borde derecho del contenedor */
+.cluster-right { position: relative; }
+.cluster-right .btn.p1 { top: 190px; right: 30px; }  /* arriba derecha */
+.cluster-right .btn.p2 { top: 250px; right: 80px; }  /* medio exterior */
+.cluster-right .btn.p3 { top: 190px; right: 130px; } /* abajo centro */
+.cluster-right .btn.p4 { top: 100px; right: 100px; }  /* medio interior */
+.cluster-right .btn.p5 { top: 44px; right: 40px; } /* superior exterior */
+
+/* utilidades para reordenar dentro de flex/grid (mantienen flujo responsivo) */
+.order-first { order: -1 !important; }
+.order-last  { order:  1 !important; }
+.order-0     { order:  0 !important; }
+
+.align-start  { align-self: flex-start !important; }
+.align-center { align-self: center !important; }
+.align-end    { align-self: flex-end !important; }
+
+/* empujar a la derecha en flex */
+.ml-auto { margin-left: auto !important; }
+
+/* ...existing code... */
+/* Responsive */
+@media (max-width: 480px) {
+  .mobile-simulator {
+    padding: 10px;
+    max-width: 100%;
+  }
+  
+  .mobile-simulator2 {
+    padding: 15px;
+  }
+  
+  .grid-botones {
+    gap: 10px;
+  }
+  
+  .columna {
+    min-height: 300px;
+  }
+  
+  .btn {
+    padding: 12px 8px;
+    font-size: 14px;
+    min-height: 45px;
+  }
+  
+  .extra {
+    font-size: 16px;
+  }
+}
+
+/* Efectos de focus para accesibilidad */
+.btn:focus {
+  outline: 3px solid rgba(33, 150, 243, 0.4);
+  outline-offset: 2px;
+}
+
+/* Mejoras visuales para los botones de control */
+.control.start {
+  background: linear-gradient(135deg, #4CAF50, #388E3C);
+}
+
+.control.reset {
+  background: linear-gradient(135deg, #ff9800, #f57c00);
+  border: 2px solid #f57c00;
+}
+
+.modo-reducido-activo .btn.reducido {
+  display: flex;
+}
+
+/* Responsive Design Mejorado */
+@media (max-width: 1200px) {
+  .controles-grid {
+    gap: 1.5rem;
+  }
+  
+  .control-individual-container {
+    max-width: 340px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .controles-grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(4, auto);
+    gap: 1.5rem;
+    max-width: 500px;
+  }
+  
+  .control-individual-container {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .tatami-sala {
+    padding: 1rem;
+  }
+  
+  .sala-header {
+    padding: 1.25rem;
+  }
+  
+  .sala-header h1 {
+    font-size: 1.75rem;
+  }
+  
+  .sala-info {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .controles-grid {
+    gap: 1rem;
+  }
+  
+  .control-individual-container {
+    padding: 1.25rem;
+    min-height: 300px;
+  }
+
+  .mobile-simulator {
+    aspect-ratio: 9 / 16;
+    max-width: 280px;
+  }
+
+  .grid-botones {
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-top: 1rem;
+  }
+
+  .columna {
+    flex-direction: row;
+    justify-content: center;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+  }
+
+  .btn {
+    max-width: 75px;
+    height: 45px;
+    font-size: 0.9rem;
+  }
+
+  .btn.extra {
+    width: 60px;
+    height: 52px;
+  }
+
+  .btn.reducido {
+    height: 45px;
+    max-width: 80px;
+  }
+
+  .columna .btn.extra:nth-child(even) {
+    margin-left: 15px;
+  }
+
+  .control-header {
+    flex-direction: column;
+    gap: 0.75rem;
+    text-align: center;
+    margin-bottom: 1.25rem;
+  }
+
+  .control-title {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .tatami-sala {
+    padding: 0.75rem;
+  }
+  
+  .controles-grid {
+    gap: 0.75rem;
+  }
+  
+  .control-individual-container {
+    padding: 1rem;
+    min-height: 280px;
+    border-radius: 16px;
+  }
+
+  .btn {
+    max-width: 65px;
+    height: 40px;
+    font-size: 0.85rem;
+    border-radius: 12px;
+  }
+
+  .btn.extra {
+    width: 55px;
+    height: 48px;
+  }
+
+  .btn.reducido {
+    height: 40px;
+    max-width: 70px;
+    font-size: 0.8rem;
+  }
+  
+  .mobile-simulator {
+    max-width: 260px;
+    border-radius: 16px;
+  }
+  
+  .mobile-simulator2 {
+    padding: 0.75rem;
+    border-radius: 12px;
+  }
+  
+  .control-title {
+    font-size: 1.1rem;
+  }
+  
+  .switch {
+    width: 48px;
+    height: 26px;
+  }
+  
+  .slider:before {
+    height: 18px;
+    width: 18px;
+  }
+}
+
+/* Animaciones suaves */
+.control-individual-container,
+.btn,
+.switch,
+.slider {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Mejora de accesibilidad */
+.btn:focus-visible {
+  outline: 3px solid #4299e1;
+  outline-offset: 2px;
+}
+
+.switch input:focus-visible + .slider {
+  outline: 3px solid #4299e1;
+  outline-offset: 2px;
+}
+/* ===== FORZAR COLORES HEXAGONALES VISIBLES ===== */
+.btn.azul.extra,
+.btn.rojo.extra {
+  color: white !important;
+  font-weight: 700;
+  border: none !important;
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,0.1), 0 4px 15px rgba(0,0,0,0.4);
+}
+
+.btn.azul.extra {
+  background: linear-gradient(135deg, #3182ce, #2b6cb0) !important;
+}
+
+.btn.azul.extra:hover {
+  background: linear-gradient(135deg, #4299e1, #3182ce) !important;
+}
+
+.btn.rojo.extra {
+  background: linear-gradient(135deg, #e53e3e, #c53030) !important;
+}
+
+.btn.rojo.extra:hover {
+  background: linear-gradient(135deg, #f56565, #e53e3e) !important;
+}

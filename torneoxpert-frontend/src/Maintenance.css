@@ -1,0 +1,69 @@
+.maintenance-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 20px;
+}
+
+.maintenance-content {
+  text-align: center;
+  background: white;
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  max-width: 500px;
+  width: 100%;
+}
+
+.maintenance-icon {
+  font-size: 4rem;
+  margin-bottom: 20px;
+}
+
+.maintenance-content h1 {
+  color: #333;
+  margin-bottom: 15px;
+  font-size: 2rem;
+}
+
+.maintenance-content p {
+  color: #666;
+  margin-bottom: 10px;
+  line-height: 1.6;
+}
+
+.maintenance-info {
+  margin-top: 20px;
+  padding: 15px;
+  background: #f8f9fa;
+  border-radius: 8px;
+  border-left: 4px solid #667eea;
+}
+
+.countdown {
+  margin: 25px 0;
+}
+
+.countdown-timer {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #e74c3c;
+  margin: 10px 0;
+}
+
+.maintenance-details {
+  margin-top: 25px;
+  text-align: left;
+}
+
+.maintenance-details ul {
+  list-style: none;
+  padding: 0;
+}
+
+.maintenance-details li {
+  padding: 8px 0;
+  color: #555;
+}

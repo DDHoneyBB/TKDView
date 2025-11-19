@@ -1,0 +1,15 @@
+.qr-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+.qr-frame {
+  border: 4px solid #00bfff;
+  border-radius: 12px;
+  overflow: hidden;
+  width: 320px;
+  height: 240px;
+  margin-bottom: 20px;
+}

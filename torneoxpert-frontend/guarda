@@ -1,0 +1,14 @@
+ <!-- Imagen animada a la derecha -->
+    <section>
+      <div class="flip-container">
+        <div class="flipper">
+          <div class="front">
+            <img src="imagen 1 con fondo.png" alt="Frente">
+          </div>
+          <div class="back">
+            <img src="imagen2 con fodo.png" alt="Espalda">
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>

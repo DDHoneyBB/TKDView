@@ -1,0 +1,68 @@
+html {
+  position: relative;
+  z-index: 0;
+  --u: 50px;
+  --hue: hue-rotate(0deg);
+  --c1: #ec2626;
+  --c2: #5299f0;
+  --c3: #0f0f0f;
+  --cs: #092bec;
+  --gp: 50% / calc(var(--u) * 12) calc(var(--u) * 12.8);
+  filter: var(--hue);
+  background:
+    repeating-conic-gradient(
+        from 61.93deg at 75% 36.5%,
+        var(--c1) 0%,
+        var(--c1) 2%,
+        var(--cs) 16%,
+        #fff0 0% 100%
+      )
+      var(--gp),
+    repeating-conic-gradient(
+        from 118.07deg at 75% 87.5%,
+        var(--c3) 0% 34.5%,
+        #fff0 0% 100%
+      )
+      var(--gp),
+    repeating-conic-gradient(
+        from 118.07deg at 50% 75%,
+        #fff0 2%,
+        var(--cs) 17.15%,
+        #fff0 0% 100%
+      )
+      var(--gp),
+    repeating-conic-gradient(
+        from 61.93deg at 50% 50%,
+        var(--c3) 0% 15.59%,
+        var(--c2) 0% 32.79%,
+        #fff0 0% 100%
+      )
+      var(--gp),
+    repeating-conic-gradient(
+        from -118.07deg at 25% 12.5%,
+        var(--c2) 0% 32.79%,
+        var(--c1) 0% 50%,
+        #fff0 0% 100%
+      )
+      var(--gp),
+    repeating-conic-gradient(
+        from -61.93deg at 25% 87.5%,
+        #fff0 0 67.25%,
+        var(--c2) 0% 100%
+      )
+      var(--gp),
+    repeating-conic-gradient(
+        from -61.93deg at 50% 75%,
+        #fff0 0% 66.5%,
+        var(--c1) 0% 84.25%,
+        var(--c3) 0% 100%
+      )
+      var(--gp),
+    repeating-conic-gradient(
+        from -61.93deg at 25% 37.5%,
+        var(--c3) 0% 34.5%,
+        var(--c1) 0% 67.25%,
+        var(--c2) 0% 100%
+      )
+      var(--gp);
+}

@@ -1,0 +1,353 @@
+/* === FORMULARIO ESCUELA (fondo blanco, letras negras/azules) === */
+
+/* Contenedor principal */
+.form-container, .subir-escuela {
+  max-width: 650px;
+  margin: 60px auto;
+  padding: 40px;
+  background: #ffffff; /* Fondo blanco */
+  border-radius: 14px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+  font-family: "Segoe UI", Roboto, sans-serif;
+  text-align: center;
+  font-size: 1.2rem;
+  color: #1e293b; /* Texto principal negro suave */
+}
+
+/* Título */
+.form-container h3,
+.subir-escuela h2 {
+  margin-bottom: 25px;
+  font-size: 2rem;
+  color: #1e3a8a; /* Azul oscuro */
+  font-weight: 700;
+}
+
+/* Formularios */
+.form-box {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Etiquetas e inputs */
+.form-group {
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  font-weight: 700;
+  color: #1e40af; /* Azul intermedio */
+  margin-bottom: 8px;
+  font-size: 1.1rem;
+}
+
+/* Inputs de texto y archivos */
+.form-group input[type="text"],
+.form-group input[type="file"] {
+  width: 100%;
+  max-width: 400px;
+  padding: 12px 14px;
+  border: 1px solid #94a3b8;
+  border-radius: 8px;
+  font-size: 1.05rem;
+  background-color: #f8fafc; /* Gris muy claro */
+  color: #111827;
+  transition: all 0.2s ease;
+}
+
+.form-group input:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 6px rgba(37, 99, 235, 0.3);
+  outline: none;
+}
+
+/* Campos dinámicos (instructores y coaches) */
+.dynamic-field {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  width: 100%;
+}
+
+.dynamic-field-inner {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  justify-content: center;
+}
+
+.dynamic-field-inner input[type="text"] {
+  flex: 1;
+  max-width: 350px;
+}
+
+.dynamic-field-inner .btn-remove {
+  background-color: #ef4444;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 6px 10px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.dynamic-field-inner .btn-remove:hover {
+  background-color: #dc2626;
+}
+
+/* Botones */
+button {
+  cursor: pointer;
+  border: none;
+  border-radius: 8px;
+  padding: 14px 22px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  transition: all 0.25s ease;
+}
+
+.btn-primary,
+button[type="submit"] {
+  background-color: #25eb67;
+  color: white;
+  width: auto;
+  gap: 1rem;
+}
+
+.btn-primary:hover,
+button[type="submit"]:hover {
+  background-color: #1d4ed8;
+}
+
+.btn-secondary,
+button[type="button"] {
+  background-color: #475569;
+  color: white;
+  gap: 1rem;
+}
+
+.btn-secondary:hover,
+button[type="button"]:hover {
+  background-color: #334155;
+}
+
+/* Mensajes */
+.mensaje {
+  margin-top: 18px;
+  font-size: 1.1rem;
+  color: #1e3a8a;
+  font-weight: 600;
+  text-align: center;
+}
+
+.mensaje:empty {
+  display: none;
+}
+
+/* Imagen de preview */
+.preview {
+  margin-top: 25px;
+  text-align: center;
+}
+
+.preview h4, .preview h3 {
+  margin-bottom: 12px;
+  font-size: 1.2rem;
+  color: #1e3a8a;
+}
+
+.preview img {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto;
+  border-radius: 10px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* Advertencia */
+.advertencia {
+  background: #fef3c7;
+  color: #92400e;
+  padding: 15px;
+  border: 1px solid #f59e0b;
+  border-radius: 8px;
+  margin-top: 15px;
+  text-align: center;
+  font-weight: 600;
+}
+.advertencia-duplicados {
+  background-color: #fff3cd;
+  border: 1px solid #ffeaa7;
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 15px;
+}
+
+.dynamic-field {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+  flex-wrap: wrap;
+}
+
+.dynamic-field input {
+  padding: 8px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+.mensaje {
+  padding: 10px;
+  border-radius: 5px;
+  margin: 10px 0;
+  font-weight: bold;
+}
+
+.mensaje:contains("❌") {
+  background-color: #fffdfe;
+  color: #721c24;
+  border: 1px solid #f5c6cb;
+}
+
+.mensaje:contains("✅") {
+  background-color: #ffffff;
+  color: #26a343;
+  border: 1px solid #c3e6cb;
+}
+
+.dni-input-container {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.advertencia-global {
+  background-color: #fff3cd;
+  border: 1px solid #ffeaa7;
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 15px;
+}
+
+.mensaje.error {
+  background-color: #f8d7da;
+  color: #721c24;
+  border: 1px solid #f5c6cb;
+  padding: 15px;
+  border-radius: 5px;
+  white-space: pre-line;
+}
+
+.mensaje.success {
+  background-color: #d4edda;
+  color: #155724;
+  border: 1px solid #c3e6cb;
+  padding: 15px;
+  border-radius: 5px;
+}
+
+.dynamic-field {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 15px;
+  flex-wrap: wrap;
+}
+
+.dynamic-field input {
+  padding: 8px;
+  border-radius: 4px;
+  min-width: 150px;
+}
+
+/* Tablet (pantallas medianas) */
+@media (max-width: 768px) {
+  .form-container, .subir-escuela {
+    max-width: 90%;
+    margin: 40px auto;
+    padding: 25px;
+    font-size: 1rem;
+  }
+
+  .form-container h3,
+  .subir-escuela h2 {
+    font-size: 1.6rem;
+  }
+
+  .form-group input[type="text"],
+  .form-group input[type="file"] {
+    max-width: 100%;
+    font-size: 1rem;
+  }
+
+  .dynamic-field-inner {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  button {
+    width: 100%;
+    font-size: 1rem;
+  }
+
+  .preview img {
+    max-width: 300px;
+  }
+}
+
+/* Celular (pantallas pequeñas) */
+@media (max-width: 480px) {
+  .form-container, .subir-escuela {
+    width: 95%;
+    margin: 20px auto;
+    padding: 20px 15px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  }
+
+  .form-container h3,
+  .subir-escuela h2 {
+    font-size: 1.4rem;
+  }
+
+  .form-group label {
+    font-size: 1rem;
+  }
+
+  .form-group input {
+    font-size: 0.95rem;
+    padding: 10px;
+  }
+
+  .dynamic-field-inner input[type="text"] {
+    max-width: 100%;
+  }
+
+  .btn-primary,
+  .btn-secondary {
+    width: 100%;
+    padding: 12px;
+    font-size: 0.95rem;
+  }
+
+  .preview img {
+    max-width: 250px;
+  }
+
+  .advertencia {
+    font-size: 0.9rem;
+    padding: 10px;
+  }
+}

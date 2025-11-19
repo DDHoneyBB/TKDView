@@ -1,0 +1,32 @@
+backend/
+│
+├── 📁 routes/
+│   ├── bracketsCombate.js   # Lógica de armado de llaves / combates
+│   ├── bracketsForma.js     # Lógica de armado de llaves / formas
+│   ├── competidores.js      # Acceso a los nombres de competidores / Movimiento entre llaves
+│   ├── escuelas.js          # CRUD de escuelas + instructores + login instructor
+│   ├── exhibiciones.js      # Creador de exhibiciones para combates
+│   ├── exportarDB.js        # Exporta la base de datos a un xlsx
+│   ├── ingreso.js           # Control de ingreso de competidores
+│   ├── inscripciones.js     # Registro de competidores, equipos, etc.
+│   ├── llaves.js            # Procesa el avance de los ganadores por las llaves
+│   ├── recibir.js           # Funciones de envio de datos entre Playerpanel-Tatami-Controles
+│   ├── tatami.js            # Logica interna de los tatamis
+│   ├── transmiciones.js     # Funciones de iniciar y finalizar transmiciones
+│   └── verificarDNI.js      # Funcion para evitar duplicad de DNIS a nivel Global
+│
+├── 📁 uploads/
+│   └── fotos/               # Fotos de competidores, logos, etc 
+│
+├── 📁 utils/
+│   ├── databaseSetup.js     # Creador de la estructura de la Base de Datos
+│   ├── generarDorsal.js     # Generador de dorsales (números únicos por competidor)
+│   ├── gestionarFoto.js     # Función para manejar la Foto de las inscripciones
+│   ├── multerConfig.js      # Configuración de subida de archivos (logos, fotos)
+│   ├── rangos.js            # Función para categorizar edades, peso, genero, etc
+│   └── verificarDNI.js      # Funcion basica para evitar duplicad de DNIS
+│
+├── database.js              # Conexión a SQLite
+├── db.sqlite                # base de datos
+├── server.js                # Punto de entrada principal
+└── package.json

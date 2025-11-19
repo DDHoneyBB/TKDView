@@ -1,0 +1,85 @@
+.dashboard-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background: linear-gradient(135deg, #0a2540, #193b63);
+  color: #fff;
+  font-family: "Poppins", sans-serif;
+  text-align: center;
+  padding: 20px;
+}
+
+.saludo {
+  font-size: 2rem;
+  margin-bottom: 40px;
+  font-weight: 600;
+}
+
+.dashboard-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+  max-width: 300px;
+}
+
+button {
+  border: none;
+  border-radius: 10px;
+  padding: 15px 20px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-primary {
+  background-color: #00b894;
+  color: #fff;
+}
+
+.btn-primary:hover {
+  background-color: #019870;
+  transform: scale(1.05);
+}
+
+.btn-secondary {
+  background-color: #0984e3;
+  color: #fff;
+}
+
+.btn-secondary:hover {
+  background-color: #076ac0;
+  transform: scale(1.05);
+}
+
+.footer-buttons {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 100%;
+  max-width: 250px;
+}
+
+.btn-volver {
+  background-color: #fdcb6e;
+  color: #333;
+}
+
+.btn-volver:hover {
+  background-color: #e6b658;
+  transform: scale(1.05);
+}
+
+.btn-cerrar {
+  background-color: #d63031;
+  color: #fff;
+}
+
+.btn-cerrar:hover {
+  background-color: #b82e2f;
+  transform: scale(1.05);
+}
