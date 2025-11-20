@@ -9,8 +9,9 @@ const TatamiManager = ({ initialTatamiData = null, tatamiId, onDataUpdate }) => 
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
   const [expandedCategories, setExpandedCategories] = useState({});
-  const [allCompetitors, setAllCompetitors] = useState([]); // Nuevo estado para todos los competidores
-  const [filteredCompetitors, setFilteredCompetitors] = useState([]); // Competidores filtrados
+  const [allCompetitors, setAllCompetitors] = useState([]);
+  const [filteredCompetitors, setFilteredCompetitors] = useState([]);
+  const [selectedCompetitor, setSelectedCompetitor] = useState(null);
 
   // Datos de ejemplo para demostración
   const sampleTatamiData = {
@@ -73,7 +74,7 @@ const TatamiManager = ({ initialTatamiData = null, tatamiId, onDataUpdate }) => 
     };
 
     initializeData();
-    fetchAllCompetitors(); // Cargar competidores al inicializar
+    fetchAllCompetitors();
   }, [tatamiId, initialTatamiData, fetchAllCompetitors]);
 
   // Guardar datos en localStorage
@@ -108,13 +109,16 @@ const TatamiManager = ({ initialTatamiData = null, tatamiId, onDataUpdate }) => 
 
   // Función para seleccionar un competidor de los resultados
   const handleSelectCompetitor = (competitor) => {
+    setSelectedCompetitor(competitor);
     console.log('Competidor seleccionado:', competitor);
-    // Aquí puedes hacer lo que necesites con el competidor seleccionado
-    // Por ejemplo, mostrar detalles, asignar a un combate, etc.
-    
     // Limpiar búsqueda después de seleccionar
     setSearchTerm('');
     setFilteredCompetitors([]);
+  };
+
+  // Cerrar detalles del competidor
+  const handleCloseDetails = () => {
+    setSelectedCompetitor(null);
   };
 
   // Renderizar estado de carga
@@ -140,7 +144,37 @@ const TatamiManager = ({ initialTatamiData = null, tatamiId, onDataUpdate }) => 
   }
 
   return (
-    <div className="tatami-manager">    
+    <div className="tatami-manager">
+      {/* Header del tatami */}
+      {tatamiData && !searchTerm && !selectedCompetitor && (
+        <div className="tatami-header">
+          <div className="tatami-info">
+            <h1>{tatamiData.name}</h1>
+            <div className="tatami-details">
+              <span className="location">
+                <i className="fas fa-map-marker-alt"></i>
+                {tatamiData.location}
+              </span>
+              <span className="judge">
+                <i className="fas fa-user-tie"></i>
+                Juez: {tatamiData.judge}
+              </span>
+            </div>
+          </div>
+          <div className="tatami-stats">
+            <div className="stat">
+              <span className="stat-value">{matches.length}</span>
+              <span className="stat-label">Combates</span>
+            </div>
+            <div className="stat">
+              <span className="stat-value">{allCompetitors.length}</span>
+              <span className="stat-label">Competidores</span>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Panel de búsqueda */}
       <div className="search-container">
         <div className="search-bar">
           <i className="fas fa-search"></i>
@@ -181,6 +215,9 @@ const TatamiManager = ({ initialTatamiData = null, tatamiId, onDataUpdate }) => 
                     className="competitor-item"
                     onClick={() => handleSelectCompetitor(competitor)}
                   >
+                    <div className="competitor-avatar">
+                      {competitor.nombre ? competitor.nombre.charAt(0).toUpperCase() : 'C'}
+                    </div>
                     <div className="competitor-info">
                       <div className="competitor-main">
                         <span className="competitor-name">{competitor.nombre}</span>
@@ -206,11 +243,97 @@ const TatamiManager = ({ initialTatamiData = null, tatamiId, onDataUpdate }) => 
           </div>
         )}
       </div>
-      {!searchTerm && (
-        <>
-          <div className="tatami-content">
+
+      {/* Detalles del competidor seleccionado */}
+      {selectedCompetitor && (
+        <div className="competitor-detail-panel">
+          <div className="detail-header">
+            <button className="back-button" onClick={handleCloseDetails}>
+              <i className="fas fa-arrow-left"></i>
+              Volver
+            </button>
+            <h2>Detalles del Competidor</h2>
           </div>
-        </>
+          <div className="competitor-detail-content">
+            <div className="detail-avatar">
+              {selectedCompetitor.nombre ? selectedCompetitor.nombre.charAt(0).toUpperCase() : 'C'}
+            </div>
+            <div className="detail-info">
+              <h3>{selectedCompetitor.nombre}</h3>
+              <div className="info-grid">
+                <div className="info-item">
+                  <span className="info-label">Dorsal:</span>
+                  <span className="info-value">{selectedCompetitor.dorsal}</span>
+                </div>
+                <div className="info-item">
+                  <span className="info-label">DNI:</span>
+                  <span className="info-value">{selectedCompetitor.dni}</span>
+                </div>
+                <div className="info-item">
+                  <span className="info-label">Escuela:</span>
+                  <span className="info-value">{selectedCompetitor.escuela}</span>
+                </div>
+                <div className="info-item">
+                  <span className="info-label">Categoría:</span>
+                  <span className="info-value">{selectedCompetitor.categoria}</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="detail-actions">
+            <button className="btn-primary">
+              <i className="fas fa-edit"></i>
+              Editar
+            </button>
+            <button className="btn-secondary">
+              <i className="fas fa-plus"></i>
+              Asignar a Combate
+            </button>
+          </div>
+        </div>
+      )}
+
+      {/* Contenido principal cuando no hay búsqueda ni competidor seleccionado */}
+      {!searchTerm && !selectedCompetitor && (
+        <div className="tatami-content">
+          <div className="content-section">
+            <h2>Combates Programados</h2>
+            {matches.length > 0 ? (
+              <div className="matches-list">
+                {matches.map((match, index) => (
+                  <div key={index} className="match-card">
+                    <div className="match-header">
+                      <span className="match-category">{match.categoria || "Categoría General"}</span>
+                      <span className="match-time">{match.hora || "Por definir"}</span>
+                    </div>
+                    <div className="competitors">
+                      <div className="competitor competitor-1">
+                        <span className="name">{match.competidor1 || "Por definir"}</span>
+                        <span className="school">{match.escuela1 || "Escuela"}</span>
+                      </div>
+                      <div className="vs">VS</div>
+                      <div className="competitor competitor-2">
+                        <span className="name">{match.competidor2 || "Por definir"}</span>
+                        <span className="school">{match.escuela2 || "Escuela"}</span>
+                      </div>
+                    </div>
+                    <div className="match-status">
+                      <span className={`status ${match.estado || 'pendiente'}`}>
+                        {match.estado || 'Pendiente'}
+                      </span>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            ) : (
+              <div className="empty-state">
+                <i className="fas fa-fist-raised"></i>
+                <h3>No hay combates programados</h3>
+                <p>Comienza asignando competidores a combates</p>
+              </div>
+            )}
+          </div>
+        </div>
       )}
     </div>
   );
